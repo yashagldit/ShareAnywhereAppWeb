@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Share Anywhere</title>
+  <meta name="description" content="Share Files/Urls From Android Device to Any Other Device">
+  <base href="/">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <style>
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .loader {
+      color: #ffffff;
+      font-size: 10px;
+      margin: 50px auto;
+      text-indent: -9999em;
+      width: 11em;
+      height: 11em;
+      border-radius: 50%;
+      background: #ffffff;
+      background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+      background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+      background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+      background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+      background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+      -webkit-animation: load3 1.4s infinite linear;
+      animation: load3 1.4s infinite linear;
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    .loader:before {
+      width: 50%;
+      height: 50%;
+      background: #ffffff;
+      border-radius: 100% 0 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+    }
+
+    .loader:after {
+      background: #000000;
+      width: 75%;
+      height: 75%;
+      border-radius: 50%;
+      content: '';
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    @-webkit-keyframes load3 {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes load3 {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123089671-4"></script> -->
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-123089671-4');
+  </script>
+
+  
+  <meta name="theme-color" content="#1976d2">
+<link rel="stylesheet" href="styles.2774272e5e653742c9a0.css"></head>
+
+<body>
+
+  <app-root>
+    <div class="loading">
+      <div class="loader"></div>
+    </div>
+  </app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.7.2/simplepeer.min.js" integrity="sha512-RZlErEuUwWv3EhGNhvni9vinu0QPwNU0OyWAlhTeezEToTZu/C+/Mn7ItRFmpcf8MTK0J2kRalSfzrpQqF7wJQ==" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/web-streams-polyfill@2.0.2/dist/ponyfill.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/streamsaver@2.0.3/StreamSaver.min.js" crossorigin="anonymous"></script>
+  <script>
+    function registerWorker() {
+      return navigator.serviceWorker.getRegistration('./').then(swReg => {
+        return swReg || navigator.serviceWorker.register('ngsw-worker.js', { scope: './' })
+      });
+    }
+    registerWorker();
+  </script>
+<script src="runtime-es2015.edb2fcf2778e7bf1d426.js" type="module"></script><script src="runtime-es5.edb2fcf2778e7bf1d426.js" nomodule defer></script><script src="polyfills-es5.b33571ff14c9aa396b36.js" nomodule defer></script><script src="polyfills-es2015.329dbea06c0779eef121.js" type="module"></script><script src="main-es2015.b08455f1f307f9a8c490.js" type="module"></script><script src="main-es5.b08455f1f307f9a8c490.js" nomodule defer></script></body>
+
+</html>
