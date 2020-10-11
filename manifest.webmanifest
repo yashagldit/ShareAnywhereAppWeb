@@ -5,7 +5,7 @@
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
-  "start_url": "https://test.share-anywhere.com/",
+  "start_url": "https://share-anywhere.com/",
   "icons": [
     {
       "src": "https://test.share-anywhere.com/assets/icons/icon-72x72.png",
