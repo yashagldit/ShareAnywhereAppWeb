@@ -63,7 +63,7 @@
     }
   ],
   "url": "https://share-anywhere.com/",
-  "lang": "",
+  "lang": "English",
   "screenshots": [],
   "share_target": {
     "action": "/",
@@ -74,5 +74,6 @@
       "text": "text",
       "url": "url"
     }
-  }
+  },
+  "description": "Best Cross-Platform File Transfer, Share Files/Urls From Any Device to Any Device. You can Share Anywhere your files."
 }
