@@ -1244,6 +1244,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ "Content-Type": "text/plain" }
     }
     onFetch(event) {
       console.log(event);
+      const url = new URL(event.request.url);
       const req = event.request;
       const scopeUrl = this.scope.registration.scope;
       const requestUrlObj = this.adapter.parseUrl(req.url, scopeUrl);
