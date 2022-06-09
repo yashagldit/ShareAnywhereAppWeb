@@ -34,8 +34,9 @@ self.addEventListener('fetch', event => {
       const formData = await event.request.formData();
       const link = formData.get('link') || '';
       console.log(formData);
+      
     //  const responseUrl = await saveBookmark(link);
-    //  return Response.redirect(responseUrl, 303);
+      return Response.redirect('/', 200);
     })());
   }
 });
