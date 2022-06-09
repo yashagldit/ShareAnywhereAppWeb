@@ -1239,6 +1239,16 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ "Content-Type": "text/plain" }
       this.scope.addEventListener("message", (event) => this.onMessage(event));
       this.scope.addEventListener("push", (event) => this.onPush(event));
       this.scope.addEventListener("notificationclick", (event) => this.onClick(event));
+      this.scope.addEventListener('fetch', event => {
+        const url = new URL(event.request.url);
+        // If this is an incoming POST request for the
+        // registered "action" URL, respond to it.
+        if (event.request.method === 'POST' ) {
+          event.request.formData().then(formData => {
+            console.log(formData);
+          });
+        }
+      });
       this.debugger = new DebugHandler(this, this.adapter);
       this.idle = new IdleScheduler(this.adapter, IDLE_DELAY, MAX_IDLE_DELAY, this.debugger);
     }
