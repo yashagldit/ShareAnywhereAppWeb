@@ -1254,8 +1254,9 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ "Content-Type": "text/plain" }
           const formData = await event.request.formData();
           console.log(formData.get('fileToUpload'))
           const link = formData.get('link') || '';
+          return Response.redirect('/', 200);
        //   const responseUrl = await saveBookmark(link);
-          return;
+         // return;
         }));
        
         return;
