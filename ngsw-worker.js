@@ -1247,12 +1247,16 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ "Content-Type": "text/plain" }
       const req = event.request;
       const scopeUrl = this.scope.registration.scope;
       const requestUrlObj = this.adapter.parseUrl(req.url, scopeUrl);
-      if(req.method === 'POST'){
-        console.log("a");
-        req.formData().then(formData => {
-          console.log("b");
-          console.log(formData.get('fileToUpload'));
-        });
+      if(req.method === 'POST' && url.pathname === '/file') {
+        event.respondWith((async () => {
+          console.log("a");
+          const formData = await event.request.formData();
+          console.log(formData.get('fileToUpload'))
+          const link = formData.get('link') || '';
+       //   const responseUrl = await saveBookmark(link);
+          return;
+        }));
+       
         return;
       }
       if (req.headers.has("ngsw-bypass") || /[?&]ngsw-bypass(?:[=&]|$)/i.test(requestUrlObj.search)) {
