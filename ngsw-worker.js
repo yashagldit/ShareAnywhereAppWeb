@@ -1251,8 +1251,9 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ "Content-Type": "text/plain" }
         console.log("a");
         req.formData().then(formData => {
           console.log("b");
-          console.log(formData);
+          console.log(formData.get('fileToUpload'));
         });
+        return;
       }
       if (req.headers.has("ngsw-bypass") || /[?&]ngsw-bypass(?:[=&]|$)/i.test(requestUrlObj.search)) {
         return;
