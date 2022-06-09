@@ -1,23 +1,23 @@
 {
   "configVersion": 1,
-  "timestamp": 1606641545382,
+  "timestamp": 1654796239067,
   "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main-es2015.211f81210af871868d2e.js",
-        "/main-es5.211f81210af871868d2e.js",
+        "/main.098d21e4720840e8.js",
         "/manifest.webmanifest",
-        "/polyfills-es2015.329dbea06c0779eef121.js",
-        "/polyfills-es5.b33571ff14c9aa396b36.js",
-        "/runtime-es2015.edb2fcf2778e7bf1d426.js",
-        "/runtime-es5.edb2fcf2778e7bf1d426.js",
-        "/styles.2774272e5e653742c9a0.css"
+        "/polyfills.473de36161c9a39a.js",
+        "/runtime.1473ffc2f27c6bb5.js",
+        "/styles.81e572316080afba.css"
       ],
       "patterns": []
     },
@@ -25,6 +25,9 @@
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
       "urls": [
         "/assets/icons/apple-touch-icon.png",
         "/assets/icons/icon-128x128.png",
@@ -61,15 +64,12 @@
     "/assets/salogo_white_long.png": "17607bea41712fdfbf2e4a6c132827dcd361c2e8",
     "/assets/upload-icon.png": "bfceec524a739fa719c391cd37fcbf973ed570ff",
     "/favicon.ico": "fe429f1711e1cd0f6fbbcd0c4dacb20b2c15f3ef",
-    "/index.html": "9a6ff74b443f04d71d5682180ee03af16f73ee96",
-    "/main-es2015.211f81210af871868d2e.js": "2792594ed26f5179b47c8b23b7c9992a3c1f38eb",
-    "/main-es5.211f81210af871868d2e.js": "6cee066dd80980b968105463d42a9ac9b72083a1",
-    "/manifest.webmanifest": "2e9c5ef74048f3977c339e3c0c1f4d27c2bf0493",
-    "/polyfills-es2015.329dbea06c0779eef121.js": "6cabbcde6c65e176b712374891cbee8d5633b1df",
-    "/polyfills-es5.b33571ff14c9aa396b36.js": "e66cfda25647f348fee4356ac5d791dc6bd9e4a6",
-    "/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/styles.2774272e5e653742c9a0.css": "1d77ff8c98a0b4ddba7b919d44bb98879d047174"
+    "/index.html": "455108d7b9f9bac82473ad554ccb4f96947b6263",
+    "/main.098d21e4720840e8.js": "0db99e3e7c72d5c361f3651bcba0ec2b74ddcf2c",
+    "/manifest.webmanifest": "5d4f3eafa9130fec291d627dba47635b81b1fbf4",
+    "/polyfills.473de36161c9a39a.js": "3fee0b691a0689d9aa383a717fcf984e8534bc40",
+    "/runtime.1473ffc2f27c6bb5.js": "4dad2f3832d54edfde3d4d00f488c1b82e733d77",
+    "/styles.81e572316080afba.css": "bf031b0fb78fb23914d3ddc28daea6c5c777a37e"
   },
   "navigationUrls": [
     {
@@ -88,5 +88,6 @@
       "positive": false,
       "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
     }
-  ]
+  ],
+  "navigationRequestStrategy": "performance"
 }
