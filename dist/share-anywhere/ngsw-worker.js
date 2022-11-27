@@ -1243,24 +1243,9 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ "Content-Type": "text/plain" }
       this.idle = new IdleScheduler(this.adapter, IDLE_DELAY, MAX_IDLE_DELAY, this.debugger);
     }
     onFetch(event) {
-      console.log(event);
-      const url = new URL(event.request.url);
       const req = event.request;
       const scopeUrl = this.scope.registration.scope;
       const requestUrlObj = this.adapter.parseUrl(req.url, scopeUrl);
-      if(req.method === 'POST' && url.pathname === '/file') {
-        event.respondWith((async () => {
-          console.log("a");
-          const formData = await event.request.formData();
-          console.log(formData.get('fileToUpload'))
-          const link = formData.get('link') || '';
-          return Response.redirect('/', 200);
-       //   const responseUrl = await saveBookmark(link);
-         // return;
-        }));
-       
-        return;
-      }
       if (req.headers.has("ngsw-bypass") || /[?&]ngsw-bypass(?:[=&]|$)/i.test(requestUrlObj.search)) {
         return;
       }
@@ -1283,7 +1268,6 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ "Content-Type": "text/plain" }
         }
         return;
       }
-     
       event.respondWith(this.handleFetch(event));
     }
     onMessage(event) {

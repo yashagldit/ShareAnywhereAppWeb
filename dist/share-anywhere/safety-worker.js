@@ -24,18 +24,3 @@ self.addEventListener('activate', event => {
     return Promise.all(ngswCacheNames.map(name => caches.delete(name)));
   }));
 });
-
-self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
-  // If this is an incoming POST request for the
-  // registered "action" URL, respond to it.
-  if (event.request.method === 'POST' ) {
-    event.respondWith((async () => {
-      const formData = await event.request.formData();
-      const link = formData.get('link') || '';
-      console.log(formData);
-    //  const responseUrl = await saveBookmark(link);
-    //  return Response.redirect(responseUrl, 303);
-    })());
-  }
-});
