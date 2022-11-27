@@ -29,10 +29,10 @@ app.use(function(req, res, next) {
 
 
 
-app.use(express.static(path.join(__dirname, 'dist/share-anywhere')));
+app.use(express.static(path.join(__dirname, 'docs')));
 module.exports = app;
 
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname + '/dist/share-anywhere/index.html'));
+  res.sendFile(path.join(__dirname + '/docs/index.html'));
 });
 
