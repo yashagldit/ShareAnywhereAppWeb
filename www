@@ -22,6 +22,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
+ const users = [];
 var server = http.createServer(app);
 
 var io = require('socket.io').listen(server);
@@ -38,9 +39,12 @@ io.on('connection',(socket)=>{
       
       if(io.sockets.adapter.sids[socket.id][data.room]==undefined){
         socket.join(data.room);
-        console.log(data.user + 'joined the room : ' + data.room);
+        console.log(data.user + ' joined the room : ' + data.room);
         socket.broadcast.to(data.room).emit('new user joined', {user:data.user, message:'has joined this room.'});
         io.in(data.room).emit('joined', {user:data.user, message:data.message});
+        users[socket.id]={};
+        users[socket.id].user=data.user;
+        users[socket.id].room=data.room;
       }
       
       
@@ -48,10 +52,11 @@ io.on('connection',(socket)=>{
     socket.on('recon', function(data){
      // console.log(data);
       io.in(data.room).emit('recon', {user:data.user, message:data.message, data:data.data, id:data.id,email:data.email});
+      users[socket.id]=data.room;
     });
     socket.on('leave', function(data){
      // console.log(data);
-      //console.log(data.user + 'left the room : ' + data.room);
+      console.log(data.user + 'left the room : ' + data.room);
 
       socket.broadcast.to(data.room).emit('left room', {user:data.user, message:'has left this room.'});
 
@@ -71,10 +76,12 @@ io.on('connection',(socket)=>{
     });  
     socket.on('disconnect', function(data) {
       // console.log(data);
-      // console.log(socket.id);
-      // console.log(data.user + 'left the room : ' + data.room);
-      socket.broadcast.to(data.room).emit('left room', {user:data.user, message:'has disconnect this room.'});
-
+      console.log(socket.id);
+      console.log(users[socket.id])
+      console.log(users[socket.id].user + 'disconnect left the room : ' + users[socket.id].room);
+      socket.broadcast.to(users[socket.id].room).emit('left room', {user:users[socket.id].user, message:'has disconnect this room.'});
+      io.in(users[socket.id].room).emit('user left', {user:users[socket.id].user, message:''});
+      users[socket.id]={};
       socket.leave(data.room);
     });
     // ss(socket).on('sending', function(stream) {
