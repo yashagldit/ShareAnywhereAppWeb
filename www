@@ -96,8 +96,8 @@ io.on("connection", (socket) => {
   socket.on("disconnect", function (data) {
     // console.log(data);
     try {
-      console.log(socket.id);
-      console.log(users[socket.id]);
+      // console.log(socket.id);
+      // console.log(users[socket.id]);
       console.log(
         users[socket.id].user +
           "disconnect left the room : " +
