@@ -141,5 +141,7 @@
       }
     }
   },
-  "defaultProject": "share-anywhere"
+  "cli": {
+    "analytics": false
+  }
 }
